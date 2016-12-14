@@ -1,58 +1,5 @@
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 #include <iostream>
-#include <stdlib.h>
-using namespace std;
-
-/**
-链表结点 
-**/
-template<class T>
-class ListNode {
-	public:
-		ListNode();
-		~ListNode();
-		T value;
-		ListNode<T> *next;
-		ListNode<T> *pre;
-		
-};
-
-// 构造函数 
-template <class T>  
-ListNode<T>::ListNode() {  
-	next = pre = NULL;
-}
-
-//析构函数  
-template <class T>  
-ListNode<T>::~ListNode() {  
-
-}
-
-/**
-链表
-**/
-template<class T>
-class List {
-	public:
-		List();
-		~List();
-		bool push_front(T newelem); // 从前插入 
-		bool push_back(T newelem); // 从后插入 
-		bool insert(ListNode<T> *p, T newelem); // 从p位置插入元素 
-		bool pop_front(); // 弹出首位元素
-		bool pop_back(); // 弹出末尾元素
-		bool remove(ListNode<T> *p1, ListNode<T> *p2); // 删除[p1, p2) 之间的所有元素 
-		ListNode<T>* front(); // 返回首位结点 
-		ListNode<T>* back(); // 返回末尾结点
-		int size(); // 返回元素个数 
-	
-	private:
-		ListNode<T> * node; // 链头
-		int nsize; // 链表大小 
-		
-};
-
+#include "list.h"
 
 // 构造函数 
 template <class T>  
@@ -169,25 +116,3 @@ template <class T>
 int List<T>::size() {
 	return nsize; 
 }
-
-int main(int argc, char** argv) {
-	List<int> a;
-
-	for (int i=10;i<16;i++)
-		a.push_back(i);
-	
-	ListNode<int> *p = a.front();
-	
-	for (int i=0;i<a.size();i++,p=p->next) printf("%d \t",p->value);
-	
-	printf("\n");
-	
-	a.remove(a.front(),a.front()->next->next->next);
-	
-	p = a.front();
-	
-	for (int i=0;i<a.size();i++,p=p->next) printf("%d \t",p->value);
-	
-	printf("\nsize:%d",a.size());
-}
-
