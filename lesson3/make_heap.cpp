@@ -54,28 +54,28 @@ void pop_heap(int *s, int *e) {
 
 
 
-int main(int argc, char** argv) {
-	int a[10] = {10,20,30,5,15};
-	make_heap(a,a+5);
-	for (int i = 0;i<10;i++) {
-		cout << a[i] << " " ;
-	}
-	cout << endl;
-	pop_heap(a,a+5);
-	for (int i = 0;i<10;i++) {
-		cout << a[i] << " " ;
-	}
-	cout << endl;
-	pop_heap(a,a+4);
-	for (int i = 0;i<10;i++) {
-		cout << a[i] << " " ;
-	}
-	cout << endl;
-	a[3]=90;
-	push_heap(a,a+4);
-	for (int i = 0;i<10;i++) {
-		cout << a[i] << " " ;
-	}
-	cout << endl;
-	return 0;
-}
+//int main(int argc, char** argv) {
+//	int a[10] = {10,20,30,5,15};
+//	make_heap(a,a+5);
+//	for (int i = 0;i<10;i++) {
+//		cout << a[i] << " " ;
+//	}
+//	cout << endl;
+//	pop_heap(a,a+5);
+//	for (int i = 0;i<10;i++) {
+//		cout << a[i] << " " ;
+//	}
+//	cout << endl;
+//	pop_heap(a,a+4);
+//	for (int i = 0;i<10;i++) {
+//		cout << a[i] << " " ;
+//	}
+//	cout << endl;
+//	a[3]=90;
+//	push_heap(a,a+4);
+//	for (int i = 0;i<10;i++) {
+//		cout << a[i] << " " ;
+//	}
+//	cout << endl;
+//	return 0;
+//}
