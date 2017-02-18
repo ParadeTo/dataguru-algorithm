@@ -25,5 +25,5 @@ function getMinNum(str) {
     return ret;
 }
 
-console.log(getMinNum('98754610123'));
-console.log(getMinNum('98754610243'));
+console.log(getMinNum('98754610123')); // 10145789623
+console.log(getMinNum('98754610243')); // 14578960243
