@@ -4,3 +4,4 @@
 *.layout
 *.dev
 *.idea
+**/*.xcodeproj/*
