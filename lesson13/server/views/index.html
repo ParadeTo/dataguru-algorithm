@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟十大热门搜索</title>
+    <style>
+        html, body {
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            margin: 300px auto 30px;
+            text-align: center;
+
+        }
+        .wrapper {
+            width: 500px;
+            height: 40px;
+            border-radius: 4px;
+            box-shadow: none;
+            font-size: 18px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .wrapper input {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        .wrapper ul {
+            padding-left: 2px;
+            border: 1px solid #eee;
+            border-top: none;
+            margin: 0;
+        }
+        .wrapper li {
+            padding: 5px 0;
+            list-style: none;
+            text-align: left;
+        }
+        #result {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>千度一下，我也不知道</h2>
+    <div class="wrapper">
+        <input id="input" type="text" placeholder="请输入你要搜索的内容"/>
+        <ul id="result">
+        </ul>
+    </div>
+
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(function () {
+  var timer = null;
+  $('#input').on('input', function() {
+    var str = $(this).val();
+    timer = setTimeout(function() {
+      $.get('/api/search',{search: str},function(data) {
+        var html = '';
+        data.data.forEach(function(d) {
+          html += '<li>'+d.word+','+d.num+'次</li>';
+        })
+        $('#result').html(html).show();
+      })
+    }, 500)
+  })
+})
+</script>
+</body>
+</html>
